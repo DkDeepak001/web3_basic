@@ -1,4 +1,4 @@
-import { InfuraProvider, formatEther, ethers } from "ethers";
+import { InfuraProvider, formatEther, ethers, id } from "ethers";
 
 const network = process.env.NETWORK || "homestead";
 //creating provider
@@ -27,3 +27,15 @@ console.log("Block: ", block);
 //getting cutternt gas price
 const gasPrice = await provider.getFeeData();
 console.log("Gas price: ", gasPrice);
+
+//bored aoe contact address
+const contractAddress = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+
+//getting emited events
+const filter = {
+  address: contractAddress,
+  topics: [id("Transfer(address,address,uint256)")],
+};
+
+const logs = await provider.getLogs(filter);
+console.log("Logs: ", logs);
