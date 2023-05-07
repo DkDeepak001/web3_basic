@@ -23,3 +23,7 @@ console.log("Transaction count: ", transactionCount);
 //getting block
 const block = await provider.getBlock(blockNumber);
 console.log("Block: ", block);
+
+//getting cutternt gas price
+const gasPrice = await provider.getFeeData();
+console.log("Gas price: ", gasPrice);
