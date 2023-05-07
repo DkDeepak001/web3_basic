@@ -1,4 +1,4 @@
-import { InfuraProvider, formatEther } from "ethers";
+import { InfuraProvider, formatEther, ethers } from "ethers";
 
 const network = process.env.NETWORK || "homestead";
 //creating provider
@@ -19,3 +19,7 @@ console.log("Balance: ", formatEther(balance));
 //getting transaction count
 const transactionCount = await provider.getTransactionCount(address);
 console.log("Transaction count: ", transactionCount);
+
+//getting block
+const block = await provider.getBlock(blockNumber);
+console.log("Block: ", block);
