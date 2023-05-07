@@ -15,3 +15,7 @@ const balance = await provider.getBalance(address);
 
 //formatting balance
 console.log("Balance: ", formatEther(balance));
+
+//getting transaction count
+const transactionCount = await provider.getTransactionCount(address);
+console.log("Transaction count: ", transactionCount);
