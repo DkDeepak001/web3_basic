@@ -40,7 +40,6 @@ const filter = {
 const logs = await provider.getLogs(filter);
 console.log("Logs: ", logs);
 
-//listing to new logs
-provider.on(filter, (log) => {
-  console.log("New log: ", log);
+provider.on("block", (blockNumber) => {
+  console.log("New block: ", blockNumber);
 });
